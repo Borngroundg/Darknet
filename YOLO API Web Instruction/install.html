@@ -99,35 +99,39 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 mx-auto">
-           <h1>Installing Darknet</h1>
-           <p>Darknet is easy to install with only two optional dependancies:</p>
+           <h1>DARKNET 설치 방법</h1>
+           <p>Darknet은 다음과 같이 두가지 방식을 사용하면 설치하기 쉽습니다.</p>
            <ul>
-            <li><a href="http://opencv.org/">OpenCV</a> if you want a wider variety of supported image types.</li>
-            <li><a href="https://developer.nvidia.com/cuda-downloads">CUDA</a> if you want GPU computation.</li>
+            <li><a href="http://opencv.org/">OpenCV</a> : 다양하게 지원되는 이미지 유형을 원할 경우</li>
+            <li><a href="https://developer.nvidia.com/cuda-downloads">CUDA</a> : CPU 계산을 원할 경우</li>
           </ul>
-          <p>Both are optional so lets start by just installing the base system. I've only tested this on Linux and Mac computers. If it doesn't work for you, email me or something?</p>
-          <h2>Installing The Base System</h2>
-          <p>First clone the Darknet git repository <a href="https://github.com/pjreddie/darknet">here</a>. This can be accomplished by:</p>
-          <pre><code>git clone https://github.com/pjreddie/darknet.git
+          <p>둘 다 선택 사항이므로 기본 시스템을 설치하는 것만으로 시작할 수 있으며 테스트 환경은 리눅스와 맥 환경에서만 실시하였습니다.</p>
+          <h2>기본 시스템 설치</h2>
+          <p>첫째로. Darknet git 저장소를 <a href="https://github.com/pjreddie/darknet">여기서</a> 다운해 주세요. 다음 명령어들을 참고하시면 됩니다.</p>
+           <pre><span style="color:white"><code>git clone https://github.com/pjreddie/darknet.git
             cd darknet
             make
-          </code></pre>
-          <p>If this works you should see a whole bunch of compiling information fly by:</p>
-          <pre><code>mkdir -p obj
+          </code></span></pre>
+          <p>이러한 작업을 수행하면 다음과 같은 많은 수집 정보를 모아야 합니다.
+          </p>
+          <pre><span style="color:white"><code>mkdir -p obj
             gcc -I/usr/local/cuda/include/  -Wall -Wfatal-errors  -Ofast....
             gcc -I/usr/local/cuda/include/  -Wall -Wfatal-errors  -Ofast....
             gcc -I/usr/local/cuda/include/  -Wall -Wfatal-errors  -Ofast....
             .....
             gcc -I/usr/local/cuda/include/  -Wall -Wfatal-errors  -Ofast -lm....
-          </code></pre>
-          <p>If you have any errors, try to fix them? If everything seems to have compiled correctly, try running it!</p>
-          <pre><code>./darknet
-          </code></pre>
-          <p>You should get the output:</p>
-          <pre><code>usage: ./darknet &lt;function&gt;
-          </code></pre>
-          <p>Great! Now check out the cool things you can do with darknet <a href="https://pjreddie.com/darknet/">here</a>.</p>
-          <h2><a name="cuda"></a>Compiling With CUDA</h2>
+          </code></span></pre>
+          <p>모든 수집 정보들을 모은것이 확인됬다면 프로그램을 실행해 보세요!
+          </p>
+          <pre><span style="color:white"><code>./darknet
+          </code></span></pre>
+          <p>다음과 같은 출력 결과를 얻어야합니다.</p>
+          <pre><span style="color:white"><code>usage: ./darknet &lt;function&gt;
+          </code></span></pre>
+          <p>좋습니다! 이제 
+            <a href="https://pjreddie.com/darknet/">여기서</a>
+            여러분이 할 수 있는 일들을 확인해 보세요.</p>
+          <h2><a name="cuda"></a>CUDA와 협업</h2>
           <p>Darknet on the CPU is fast but it's like 500 times faster on GPU! You'll have to have an <a href="https://developer.nvidia.com/cuda-gpus">Nvidia GPU</a> and you'll have to install <a href="https://developer.nvidia.com/cuda-downloads">CUDA</a>. I won't go into CUDA installation in detail because it is terrifying.</p>
           <p>Once you have CUDA installed, change the first line of the <code>Makefile</code> in the base directory to read:</p>
           <pre><code>GPU=1
